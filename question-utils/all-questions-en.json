@@ -1,0 +1,93 @@
+[
+  {
+    "id": 0,
+    "question": "Are you a Greek citizen or a citizen of a European Union member state?",
+    "options": [
+      "Yes, I am a Greek citizen",
+      "Yes, I am a citizen of an EU member state",
+      "No, I am a third-country national"
+    ]
+  },
+  {
+    "id": 1,
+    "question": "Are you totally blind according to Law 958/1979 or an escort of a totally blind person?",
+    "options": [
+      "Yes, I am totally blind",
+      "Yes, I am an escort of a totally blind person",
+      "No"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Have you become incapacitated for work following an industrial accident on Greek territory?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is your annual total declared personal income (including independently taxed or specially taxed income)?",
+    "options": [
+      "Less than or equal to €23,000",
+      "Greater than €23,000 (after deducting OPEKA welfare benefits)",
+      "Greater than €23,000 (without deducting OPEKA welfare benefits)"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Do you have legal and permanent residence in Greece?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Do you wish for free travel only for intercity buses (KTEL) (without a pass for urban transport)?",
+    "options": [
+      "Yes",
+      "No, I wish for free travel for urban transport as well"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Do you wish for a 50% reduced ticket for intercity buses (KTEL)?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Do you reside permanently in a Regional Unit of the country?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Do you reside permanently in a Regional Unit of the country?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Are you a beneficiary of the Social Solidarity Income (KEA) or another welfare benefit?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Are you a beneficiary of the Social Solidarity Income (KEA) or another welfare benefit?",
+    "options": [
+      "Yes",
+      "No"
+    ]
+  }
+]

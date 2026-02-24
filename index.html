@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title class="language-component" data-component="mainTitle">Transportation Card</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="@digigov-css_v0.31.0/digigov.css" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-functions.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="govgr-header">
+        <div class="govgr-header__container">
+            <div class="govgr-header__content">
+                <div class="header-row">
+                    <a href="#" id="logo-link" title="link-to-homepage" aria-label="Link to homepage">
+                        <img src="./assets/Logo.png" alt="Gov.gr Research Prototype Logo" width="200" height="200"
+                            style="padding-right: 25px;">
+                    </a>
+                    <div class="govgr-header-title language-component serviceTitle" data-component="pageTitle"
+                        role="heading" tabindex="1">Δελτίο
+                        μετακίνησης ΑΜΕΑ</div>
+                </div>
+                <!-- Language switch button -->
+                <button id="languageBtn" type="button">
+                    <svg id="svg-language-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" role="presentation">
+                        <path
+                            d="M23.3209 8.0308C21.678 3.36459 17.2289 0.00478019 12.0093 0H12H11.9907C6.76627 0.00450714 2.31674 3.36014 0.678319 8.0308C0.673812 8.04013 0.673812 8.04915 0.668983 8.05849C0.240167 9.2954 0 10.6202 0 12C0 13.3798 0.235338 14.7046 0.669305 15.9415C0.673812 15.9508 0.673812 15.9599 0.678641 15.9692C2.32184 20.6399 6.77096 23.9952 11.991 24H12.0003H12.0097C17.2341 23.9955 21.6836 20.6399 23.322 15.9692C23.3265 15.9599 23.3265 15.9508 23.3313 15.9415C23.7598 14.7046 24 13.3798 24 12C24 10.6202 23.7647 9.2954 23.3307 8.05849C23.3262 8.04915 23.3262 8.04013 23.3214 8.0308H23.3209ZM0.92281 12C0.92281 10.8462 1.10277 9.72933 1.4305 8.6814H5.17818C4.99822 9.73831 4.90132 10.8506 4.90132 12C4.90132 13.1494 4.99822 14.2616 5.17818 15.3186H1.4305C1.10277 14.2707 0.92281 13.1538 0.92281 12ZM5.82397 12C5.82397 10.8462 5.92539 9.72933 6.10535 8.6814H11.5377V15.3182L6.10568 15.3185C5.92089 14.2706 5.82398 13.1538 5.82398 11.9999L5.82397 12ZM17.7033 7.75841H12.4606V0.959993C14.8282 1.27389 16.8312 3.99236 17.7033 7.75841ZM11.5373 0.959993V7.75841H6.29465C7.16677 3.99236 9.16988 1.27384 11.5373 0.959993ZM11.5373 16.2418V23.0402C9.1698 22.7263 7.16677 20.0078 6.29432 16.2418H11.5373ZM12.4606 23.0402V16.2418H17.7037C16.8312 20.0078 14.8281 22.7263 12.4606 23.0402ZM12.4606 15.3187V8.68156H17.8926C18.0771 9.72917 18.174 10.8463 18.174 12.0002C18.174 13.154 18.0726 14.2708 17.8926 15.3188L12.4606 15.3187ZM18.8205 8.68156H22.5682C22.8956 9.7295 23.0755 10.8463 23.0755 12.0002C23.0755 13.154 22.8956 14.2708 22.5678 15.3188H18.8202C19.0001 14.2619 19.097 13.1496 19.097 12.0002C19.0973 10.8509 19.0004 9.73856 18.8205 8.68156H18.8205ZM22.2265 7.75858H18.636C18.0314 5.05843 16.8683 2.82484 15.3823 1.454C18.4835 2.45108 20.9897 4.77706 22.2266 7.75858H22.2265ZM8.61151 1.454C7.12548 2.81998 5.96227 5.05843 5.35775 7.75858H1.76724C3.00858 4.77706 5.51492 2.45108 8.6116 1.454H8.61151ZM1.77169 16.2421H5.3622C5.96679 18.9422 7.12993 21.1758 8.61596 22.5467C5.51475 21.5496 3.0085 19.2236 1.77161 16.2421H1.77169ZM15.3867 22.5467C16.8728 21.1807 18.036 18.9422 18.6405 16.2421H22.231C20.9897 19.2236 18.4833 21.5496 15.3866 22.5467H15.3867Z"
+                            fill="#003375" />
+                    </svg>
+                    <span class="language-component" data-component="languageBtn">EL</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mask" id="mask-up"></div>
+    <div class="mask" id="mask-bottom"></div>
+
+    <!--  MAIN CONTAINER -->
+    <div class="govgr-width-container" id="content">
+        <div class="govgr-main-wrapper">
+            <div class="govgr-grid-column-two-thirds">
+                <h1 class="govgr-heading-xl language-component" data-component="infoTitle" tabindex="3">
+                    Πληροφορίες για την χορήγηση Δελτίων Μετακίνησης ΑΜΕΑ για το 2023
+                </h1>
+            </div>
+        </div>
+
+        <div id="intro">
+            <p class="govgr-body" id="intro-box" tabindex="4">
+                <strong data-component="subTitle1" class="language-component">Αυτό το ερωτηματολόγιο μπορεί να σας
+                    βοηθήσει
+                    να βρείτε αν δικαιούστε να λάβετε το Δελτίο Μετακίνησης ΑΜΕΑ.</strong><br /><br />
+                <span data-component="subTitle2" class="language-component">H συμπλήρωση του ερωτηματολογίου δεν απαιτεί
+                    παραπάνω από 10 λεπτά.</span><br /><br />
+                <em data-component="subTitle3" class="language-component">Δεν θα αποθηκεύσουμε ούτε θα μοιραστούμε τις
+                    απαντήσεις σας.</em><br /><br />
+                <strong>
+                    <a href="#" id="disclaimerLink"
+                        style="text-decoration: underline; cursor: pointer; color: #003375;">Αποποίηση Ευθύνης</a>:
+                </strong>Η υπηρεσία αυτή αποτελεί ερευνητικό πρωτότυπο του Πανεπιστημίου
+                Μακεδονίας και δεν αποτελεί
+                επίσημη υπηρεσία του <a href="www.gov.gr">gov.gr</a>. Παρέχεται αποκλειστικά για δοκιμαστικούς σκοπούς
+                χωρίς καμία ευθύνη ή εγγύηση.
+                Για επίσημες πληροφορίες, επισκεφθείτε το <a href="www.gov.gr">www.gov.gr</a>.<br />
+            </p>
+            <button class="govgr-btn govgr-btn-primary govgr-btn-cta" id="startBtn" tabindex="5">
+                <span class="language-component" data-component="startBtn">Ας ξεκινήσουμε</span>
+                <svg viewBox="0 0 24 24" class="govgr-arrow--right" focusable="false" aria-hidden="true">
+                    <path d="M8.5,2L6.1,4.3l7.6,7.7l-7.6,7.6L8.5,22l10-10L8.5,2z" />
+                </svg>
+            </button>
+        </div>
+        <a href="#" class="govgr-back-link " id="backButton" style="display: none" tabindex="6">
+            <svg class="govgr-caret--left" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18,22V2L6,12L18,22z" />
+            </svg>
+            <span class="language-component" data-component="backButton">Πίσω</span>
+        </a>
+        <div id="questions-btns">
+            <div class="question-container" tabindex="7">
+                <!-- here we load questions with JQuery -->
+            </div>
+            <button class="govgr-btn govgr-btn-primary govgr-btn-cta" id="nextQuestion" style="display: none;">
+                <span class="language-component" data-component="nextQuestion" tabindex="8">Επόμενη ερώτηση</span>
+                <svg viewBox="0 0 24 24" class="govgr-arrow--right" focusable="false" aria-hidden="true">
+                    <path d="M8.5,2L6.1,4.3l7.6,7.7l-7.6,7.6L8.5,22l10-10L8.5,2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <br /><br />
+    <div id="faqContainer" class="govgr-accordion govgr-width-container faqContainer" style="display: none;">
+    </div>
+
+    <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="disclaimerModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="disclaimerModalLabel">Αποποίηση Ευθύνης (Disclaimer)</h5>
+                    <button type="button" class="btn-close" id="modalButton" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Η παρούσα διαδικτυακή υπηρεσία αποτελεί ερευνητικό πρωτότυπο που αναπτύχθηκε από το Πανεπιστήμιο
+                        Μακεδονίας στο πλαίσιο ερευνητικών ή πιλοτικών δραστηριοτήτων. Δεν αποτελεί επίσημη υπηρεσία ή
+                        πηγή πληροφοριών της Ελληνικής Κυβέρνησης ή του gov.gr, ούτε συνδέεται ή εγκρίνεται από αυτά.
+                    </p>
+
+                    <p>Το περιεχόμενο, τα δεδομένα και τα αποτελέσματα που παρέχονται μέσω της παρούσας υπηρεσίας είναι
+                        πειραματικού χαρακτήρα και διατίθενται «ως έχουν» (as is), χωρίς καμία ρητή ή σιωπηρή εγγύηση
+                        ακρίβειας, πληρότητας ή επικαιρότητας.</p>
+
+                    <p>Το Πανεπιστήμιο Μακεδονίας και οι ερευνητές του έργου δεν φέρουν καμία ευθύνη ή υποχρέωση για
+                        τυχόν λάθη, παραλείψεις, ανακρίβειες, καθυστερήσεις, ή οποιαδήποτε άμεση ή έμμεση ζημία, απώλεια
+                        ή βλάβη που ενδέχεται να προκύψει από τη χρήση ή την εμπιστοσύνη στο περιεχόμενο της υπηρεσίας.
+                    </p>
+
+                    <p>Οι επισκέπτες και χρήστες της υπηρεσίας προτρέπονται να ανατρέχουν πάντα στους επίσημους
+                        ιστότοπους της Ελληνικής Κυβέρνησης και του gov.gr για ακριβείς, επίσημες και επικαιροποιημένες
+                        πληροφορίες.</p>
+
+                    <p><strong>Με τη χρήση της υπηρεσίας, ο επισκέπτης αποδέχεται πλήρως τους παραπάνω όρους και την
+                            αποποίηση ευθύνης.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER  -->
+    <footer class="govgr-footer" role="contentinfo">
+        <div class="govgr-width-container">
+            <div class="govgr-footer__meta">
+                <div class="govgr-footer__meta-item govgr-footer__meta-item--grow">
+                    <div class="govgr-footer__content">
+                        <p class="govgr-footer__licence-description" id="footerData">
+                            <span tabindex="19" class="language-component" data-component="footerText">Υλοποίηση για την
+                                εκπόνηση πτυχιακής εργασίας από τις φοιτήτριες της Εφαρμοσμένης Πληροφορικής:</span>
+                            <a tabindex="20" href="https://github.com/ElisavetAmpatzidou" target="_blank"
+                                rel="noreferrer noopener" class="govgr-link"><span class="language-component"
+                                    data-component="student1">Αμπατζίδου Ελισάβετ</span>
+                                <span class="govgr-visually-hidden">(ανοίγει σε καινούρια καρτέλα)</span></a>
+                            <span class="language-component" data-component="and">και</span>
+                            <a tabindex="21" href="https://github.com/evitadasy" target="_blank"
+                                rel="noreferrer noopener" class="govgr-link"><span class="language-component"
+                                    data-component="student2">Δασύρα Ευμορφία Ελπίδα</span>
+                                <span class="govgr-visually-hidden">(ανοίγει σε καινούρια καρτέλα)</span></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="govgr-footer__meta-item">
+                    <!-- <img class="govgr-footer__government-logo" src="static/img/government-logo2.svg" alt="government logo" /> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<!-- JS -->
+<script type="text/javascript" src="js/change-language-functions.js"></script>
+<script>
+    // Add a click event listener to the SVG link
+    const logoLink = document.getElementById("logo-link");
+    logoLink.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default link behavior 
+        location.reload(); // Reload the page
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const disclaimerLink = document.getElementById("disclaimerLink");
+        const disclaimerModalElement = document.getElementById('disclaimerModal');
+        const disclaimerModal = new bootstrap.Modal(disclaimerModalElement);
+
+        disclaimerLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            disclaimerModal.show();
+        });
+
+        const closeButton = document.getElementById("modalButton")
+        closeButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            disclaimerModal.hide();
+        })
+    });
+</script>
+
+</html>
