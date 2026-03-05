@@ -1,151 +1,192 @@
 {
   "_id": {
-    "$oid": "69a95b4afe20c66a7e84d78b"
+    "$oid": "69a968d9fe20c66a7e84dff4"
   },
   "service": {
     "title": "Δελτίο μετακίνησης ΑΜΕΑ",
     "id": "285594",
     "pipeline": "Pipeline 2"
   },
+  "base_evidences": [
+    { "evidence_title": "Ψηφιακό αντίγραφο δελτίου ταυτότητας" },
+    { "evidence_title": "Γνωμάτευση Υγειονομικής Επιτροπής σε ισχύ, όπου θα αναγράφεται το παθολογοανατομικό ποσοστό αναπηρίας (τουλάχιστον 67%)" },
+    { "evidence_title": "Υπεύθυνη Δήλωση του Ν. 1599/86 περί της ακριβούς διεύθυνσης μονίμου διαμονής." },
+    { "evidence_title": "Εκκαθαριστικό σημείωμα τελευταίας φορολογικής δήλωσης." }
+  ],
   "questions": [
     {
       "id": 1,
-      "question_text": "Ποιό είναι το ετήσιο συνολικό σας δηλωθέν εισόδημα για το τρέχον έτος;",
+      "question_text": "Είστε ολικά τυφλός σύμφωνα με τον ν.958/1979;",
       "options": [
         {
-          "id": 1,
-          "option_text": "Ατομικό εισόδημα έως 23.000€ ή Οικογενειακό έως 29.000€ (χωρίς εξαρτώμενα μέλη)",
-          "next_step": 2,
-          "terminate": false
+          "id": 101,
+          "option_text": "Ναι, είμαι πιστοποιημένα ολικά τυφλός",
+          "next_step": 3,
+          "terminate": false,
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 1011,
+              "required_evidence": "Πιστοποίηση Ολικής Τυφλότητας"
+            }
+          ]
         },
         {
-          "id": 2,
-          "option_text": "Υπολογισμός οικογενειακού εισοδήματος με προσαύξηση για εξαρτώμενα μέλη",
-          "next_step": 3,
-          "terminate": false
+          "id": 102,
+          "option_text": "Όχι, δεν ισχύει για εμένα",
+          "next_step": 2,
+          "terminate": false,
+          "eligible": null
         }
       ]
     },
     {
       "id": 2,
-      "question_text": "Είστε ολικά τυφλός/ή ή λαμβάνετε προνοιακά επιδόματα αναπηρίας από τον ΟΠΕΚΑ που εξαιρούν το εισόδημά σας (όπως ορίζεται στις προϋποθέσεις);",
+      "question_text": "Κατέχετε πολυτεκνική ταυτότητα;",
       "options": [
         {
-          "id": 1,
-          "option_text": "Ναι, είμαι ολικά τυφλός/ή",
-          "next_step": 5,
+          "id": 201,
+          "option_text": "Ναι, είμαι πολύτεκνος με ενεργό δελτίο",
+          "next_step": 4,
           "terminate": false,
-          "termination_reason": "Ειδική κατηγορία με αυτόματη έγκριση"
+          "eligible": null
         },
         {
-          "id": 2,
-          "option_text": "Όχι, συνεχίστε με το οικογενειακό εισόδημα",
+          "id": 202,
+          "option_text": "Όχι, αλλά έχω ανήλικα τέκνα που πληρούν τις προϋποθέσεις",
           "next_step": 4,
-          "terminate": false
+          "terminate": false,
+          "eligible": null
+        },
+        {
+          "id": 203,
+          "option_text": "Δεν επιθυμώ μετακίνηση με αστικά μέσα - μόνο ΚΤΕΛ",
+          "next_step": null,
+          "terminate": true,
+          "eligible": true
         }
       ]
     },
     {
       "id": 3,
-      "question_text": "Πόσα εξαρτώμενα μέλη έχετε με αναπηρία 67% και άνω;",
+      "question_text": "Έχετε αναπηρία 67% και άνω;",
       "options": [
         {
-          "id": 1,
-          "option_text": "0 εξαρτώμενα μέλη",
+          "id": 301,
+          "option_text": "Ναι - διαθέτω σχετική γνωμάτευση",
           "next_step": 4,
-          "terminate": false
+          "terminate": false,
+          "eligible": null
         },
         {
-          "id": 2,
-          "option_text": "Ένα ή περισσότερα εξαρτώμενα μέλη (απαιτείται απόδειξη αναπηρίας για προσαύξηση εισοδήματος)",
+          "id": 302,
+          "option_text": "Ναι - λαμβάνω προνοιακό επίδομα ΟΠΕΚΑ",
           "next_step": null,
-          "terminate": false,
-          "termination_reason": "Προσδιορισμός απαιτούμενης προσαύξησης οικογενειακού εισοδήματος",
+          "terminate": true,
+          "eligible": true,
           "evidences": [
             {
-              "id": 1,
-              "required_evidence": "Γνωμάτευση Υγειονομικής Επιτροπής με ποσοστό αναπηρίας ≥67%"
+              "id": 3021,
+              "required_evidence": "Απόφαση Προνοιακών Επιδομάτων"
             }
           ]
+        },
+        {
+          "id": 303,
+          "option_text": "Όχι, δεν ικανοποιώ τα κριτήρια αναπηρίας",
+          "next_step": null,
+          "terminate": true,
+          "eligible": false,
+          "termination_reason": "Δεν πληρούνται τα κριτήρια αναπηρίας"
         }
       ]
     },
     {
       "id": 4,
-      "question_text": "Εισάγεται το ακριβές οικογενειακό εισόδημα μετά την προσαύξηση για εξαρτώμενα μέλη:",
+      "question_text": "Χρειάζεστε μετακίνηση με συνοδό;",
       "options": [
         {
-          "id": 1,
-          "option_text": "Το εισόδημα υπερβαίνει τα όρια (23.000€/29.000€)",
+          "id": 401,
+          "option_text": "Ναι - Απαιτείται συνοδός (π.χ. ολικά τυφλός)",
           "next_step": null,
           "terminate": true,
-          "termination_reason": "Υπέρβαση εισοδηματικών κριτηρίων"
+          "eligible": true,
+          "termination_reason": "Δικαιούχος δωρεάν μετακίνησης με συνοδό",
+          "evidences": []
         },
         {
-          "id": 2,
-          "option_text": "Το εισόδημα είναι εντός ορίων ή κάτω από αυτά",
-          "next_step": 6,
-          "terminate": false
+          "id": 402,
+          "option_text": "Ναι - Εξαρτώμενο μέλος με αναπηρία ≥67%",
+          "next_step": null,
+          "terminate": true,
+          "eligible": true,
+          "termination_reason": "Δικαιούχος δωρεάν μετακίνησης με συνοδό",
+          "evidences": [
+            {
+              "id": 4021,
+              "required_evidence": "Γνωμάτευση εξαρτώμενου μέλους"
+            }
+          ]
+        },
+        {
+          "id": 403,
+          "option_text": "Όχι - ανεξάρτητη μετακίνηση",
+          "next_step": 5,
+          "terminate": false,
+          "eligible": null
         }
       ]
     },
     {
       "id": 5,
-      "question_text": "Επιθυμείτε να λάβετε δελτίο μετακίνησης για αστική συγκοινωνία;",
+      "question_text": "Επιθυμείτε προσωποποιημένη ηλεκτρονική κάρτα ΟΑΣΑ;",
       "options": [
         {
-          "id": 1,
-          "option_text": "Όχι, μόνο για Υπεραστικά ΚΤΕΛ",
-          "next_step": null,
-          "terminate": false
+          "id": 501,
+          "option_text": "Ναι - για πρώτη έκδοση ή αντικατάσταση",
+          "next_step": 6,
+          "terminate": false,
+          "eligible": null
         },
         {
-          "id": 2,
-          "option_text": "Ναι, και για αστική συγκοινωνία (απαιτούνται φωτογραφίες για προσωποποιημένη κάρτα)",
-          "next_step": 7,
-          "terminate": false,
-          "evidences": [
-            {
-              "id": 1,
-              "required_evidence": "Δύο πρόσφατες φωτογραφίες"
-            }
-          ]
+          "id": 502,
+          "option_text": "Όχι - διαθέτω ήδη έγκυρο δελτίο μετακίνησης",
+          "next_step": null,
+          "terminate": true,
+          "eligible": true
         }
       ]
     },
     {
       "id": 6,
-      "question_text": "Συμπληρώστε το ποσό του οικογενειακού εισοδήματος που πληροί τα κριτήρια:",
+      "question_text": "Έχετε τα απαιτούμενα εισοδηματικά κριτήρια;",
       "options": [
         {
-          "id": 1,
-          "option_text": "Πληρεί τα εισοδηματικά κριτήρια",
-          "next_step": 7,
-          "terminate": false
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "question_text": "Επιλέξτε τον τύπο μετακίνησης που δικαιούστε βάσει των απαντήσεών σας:",
-      "options": [
-        {
-          "id": 1,
-          "option_text": "Δωρεάν μετακίνηση σε αστική συγκοινωνία και Υπεραστικά ΚΤΕΛ",
+          "id": 601,
+          "option_text": "Ατομικό <23.000€ ή Οικογενειακό <29.000€ (με προσαύξηση για εξαρτώμενα μέλη με αναπηρία ≥67%)",
           "next_step": null,
-          "terminate": false,
+          "terminate": true,
+          "eligible": true,
           "evidences": [
             {
-              "id": 2,
-              "required_evidence": "Προσωποποιημένη ηλεκτρονική κάρτα (με φωτογραφία)"
+              "id": 6011,
+              "required_evidence": "Εκκαθαριστικό Σημείωμα 2022"
             }
           ]
         },
         {
-          "id": 2,
-          "option_text": "Μειωμένο εισιτήριο 50% σε Υπεραστικά ΚΤΕΛ μόνο",
+          "id": 602,
+          "option_text": "Υπέρβαση ορίων (με απόδειξη απαλλαγής ΟΠΕΚΑ)",
           "next_step": null,
-          "terminate": false
+          "terminate": true,
+          "eligible": true,
+          "termination_reason": "Απαλλαγή από εισοδηματικά κριτήρια λόγω επιδομάτων",
+          "evidences": [
+            {
+              "id": 6021,
+              "required_evidence": "Βεβαίωση ποσού προνοιακού επιδόματος"
+            }
+          ]
         }
       ]
     }

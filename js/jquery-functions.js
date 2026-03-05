@@ -104,7 +104,7 @@ $("document").ready(function () {
     $(".question-container").html(questionElement);
   }
 
-  // ── Termination screen ─────────────────────────────────────────────────────
+  // ── Termination screen (rejection) ────────────────────────────────────────
   function skipToEnd(message) {
     var errorEnd = document.createElement("h5");
     errorEnd.className = "govgr-error-summary";
@@ -129,7 +129,16 @@ $("document").ready(function () {
     var evidenceList = document.createElement("ol");
     evidenceList.setAttribute("id", "evidences");
 
-    // Render deduplicated evidences collected during the quiz
+    // Always-required base evidences first
+    if (serviceData.base_evidences) {
+      serviceData.base_evidences.forEach(function (ev) {
+        var li = document.createElement("li");
+        li.textContent = ev.evidence_title;
+        evidenceList.appendChild(li);
+      });
+    }
+
+    // Additional evidences collected during the quiz (deduplicated)
     Object.keys(collectedEvidences).forEach(function (text) {
       var li = document.createElement("li");
       li.textContent = text;
@@ -137,6 +146,7 @@ $("document").ready(function () {
     });
 
     $(".question-container").append(evidenceList);
+
     hideFormBtns();
   }
 
@@ -178,11 +188,17 @@ $("document").ready(function () {
 
     // ── Terminate path ─────────────────────────────────────────────────────
     if (selectedOption.terminate) {
-      skipToEnd(selectedOption.termination_reason || "");
+      if (selectedOption.eligible === false) {
+        // Explicit rejection
+        skipToEnd(selectedOption.termination_reason || "");
+      } else {
+        // eligible === true (or null as fallback) → success
+        submitForm();
+      }
       return;
     }
 
-    // ── End of quiz (next_step is null) ────────────────────────────────────
+    // ── End of quiz (next_step is null, not terminated) ────────────────────
     if (selectedOption.next_step === null) {
       submitForm();
       return;
