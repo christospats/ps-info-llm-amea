@@ -34,7 +34,7 @@
           "id": 1,
           "option_text": "Ναι, είμαι ολικά τυφλός/ή",
           "next_step": 5,
-          "terminate": true,
+          "terminate": false,
           "termination_reason": "Ειδική κατηγορία με αυτόματη έγκριση"
         },
         {
@@ -59,7 +59,7 @@
           "id": 2,
           "option_text": "Ένα ή περισσότερα εξαρτώμενα μέλη (απαιτείται απόδειξη αναπηρίας για προσαύξηση εισοδήματος)",
           "next_step": null,
-          "terminate": true,
+          "terminate": false,
           "termination_reason": "Προσδιορισμός απαιτούμενης προσαύξησης οικογενειακού εισοδήματος",
           "evidences": [
             {
@@ -97,7 +97,7 @@
           "id": 1,
           "option_text": "Όχι, μόνο για Υπεραστικά ΚΤΕΛ",
           "next_step": null,
-          "terminate": true
+          "terminate": false
         },
         {
           "id": 2,
@@ -133,7 +133,7 @@
           "id": 1,
           "option_text": "Δωρεάν μετακίνηση σε αστική συγκοινωνία και Υπεραστικά ΚΤΕΛ",
           "next_step": null,
-          "terminate": true,
+          "terminate": false,
           "evidences": [
             {
               "id": 2,
@@ -145,7 +145,7 @@
           "id": 2,
           "option_text": "Μειωμένο εισιτήριο 50% σε Υπεραστικά ΚΤΕΛ μόνο",
           "next_step": null,
-          "terminate": true
+          "terminate": false
         }
       ]
     }
