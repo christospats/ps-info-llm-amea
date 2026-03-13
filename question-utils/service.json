@@ -1,11 +1,11 @@
 {
   "_id": {
-    "$oid": "69a968d9fe20c66a7e84dff4"
+    "$oid": "69aac9d7fe20c66a7e85c73f"
   },
   "service": {
     "title": "Δελτίο μετακίνησης ΑΜΕΑ",
     "id": "285594",
-    "pipeline": "Pipeline 2"
+    "pipeline": "Pipeline 1"
   },
   "base_evidences": [
     { "evidence_title": "Ψηφιακό αντίγραφο δελτίου ταυτότητας" },
@@ -16,177 +16,268 @@
   "questions": [
     {
       "id": 1,
-      "question_text": "Είστε ολικά τυφλός σύμφωνα με τον ν.958/1979;",
+      "question_text": "Για ποιο λόγο αιτείστε την έκδοση ή ανανέωση του δελτίου μετακίνησης;",
       "options": [
         {
           "id": 101,
-          "option_text": "Ναι, είμαι πιστοποιημένα ολικά τυφλός",
-          "next_step": 3,
+          "option_text": "Έκδοση για πρώτη φορά ή ανανέωση",
+          "next_step": 2,
           "terminate": false,
           "eligible": null,
           "evidences": [
             {
               "id": 1011,
-              "required_evidence": "Πιστοποίηση Ολικής Τυφλότητας"
+              "required_evidence": "Δύο (2) πρόσφατες φωτογραφίες"
             }
           ]
         },
         {
           "id": 102,
-          "option_text": "Όχι, δεν ισχύει για εμένα",
+          "option_text": "Επανέκδοση λόγω απώλειας (1η φορά)",
           "next_step": 2,
           "terminate": false,
-          "eligible": null
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 1021,
+              "required_evidence": "Δύο (2) πρόσφατες φωτογραφίες"
+            },
+            {
+              "id": 1022,
+              "required_evidence": "Βεβαίωση από αστυνομική Αρχή για την απώλεια του δελτίου"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "option_text": "Επανέκδοση λόγω απώλειας (2η φορά)",
+          "next_step": null,
+          "terminate": true,
+          "eligible": false,
+          "termination_reason": "Δεν επιτρέπεται δεύτερη επανέκδοση δελτίου σε περίπτωση απώλειας."
+        },
+        {
+          "id": 104,
+          "option_text": "Αίτηση για δελτίο συνοδού",
+          "next_step": 2,
+          "terminate": false,
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 1041,
+              "required_evidence": "Τρεις (3) πρόσφατες φωτογραφίες"
+            }
+          ]
+        },
+        {
+          "id": 105,
+          "option_text": "Υποβολή αίτησης από τρίτο πρόσωπο",
+          "next_step": 2,
+          "terminate": false,
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 1051,
+              "required_evidence": "Δύο (2) πρόσφατες φωτογραφίες"
+            },
+            {
+              "id": 1052,
+              "required_evidence": "Εξουσιοδότηση ή συμβολαιογραφικό πληρεξούσιο τρίτου προσώπου"
+            }
+          ]
         }
       ]
     },
     {
       "id": 2,
-      "question_text": "Κατέχετε πολυτεκνική ταυτότητα;",
+      "question_text": "Διαμένετε μόνιμα σε μία από τις Περιφερειακές Ενότητες της Ελλάδας;",
       "options": [
         {
           "id": 201,
-          "option_text": "Ναι, είμαι πολύτεκνος με ενεργό δελτίο",
-          "next_step": 4,
+          "option_text": "Ναι, διαμένω μόνιμα στην Ελλάδα",
+          "next_step": 3,
           "terminate": false,
           "eligible": null
         },
         {
           "id": 202,
-          "option_text": "Όχι, αλλά έχω ανήλικα τέκνα που πληρούν τις προϋποθέσεις",
-          "next_step": 4,
-          "terminate": false,
-          "eligible": null
-        },
-        {
-          "id": 203,
-          "option_text": "Δεν επιθυμώ μετακίνηση με αστικά μέσα - μόνο ΚΤΕΛ",
+          "option_text": "Όχι",
           "next_step": null,
           "terminate": true,
-          "eligible": true
+          "eligible": false,
+          "termination_reason": "Δικαίωμα μετακίνησης έχουν όσοι διαμένουν μόνιμα στην Ελλάδα."
         }
       ]
     },
     {
       "id": 3,
-      "question_text": "Έχετε αναπηρία 67% και άνω;",
+      "question_text": "Ποια είναι η ιδιότητά σας σχετικά με την ιθαγένεια;",
       "options": [
         {
           "id": 301,
-          "option_text": "Ναι - διαθέτω σχετική γνωμάτευση",
-          "next_step": 4,
+          "option_text": "Έλληνας πολίτης ή πολίτης χώρας της Ε.Ε.",
+          "next_step": 5,
           "terminate": false,
           "eligible": null
         },
         {
           "id": 302,
-          "option_text": "Ναι - λαμβάνω προνοιακό επίδομα ΟΠΕΚΑ",
-          "next_step": null,
-          "terminate": true,
-          "eligible": true,
-          "evidences": [
-            {
-              "id": 3021,
-              "required_evidence": "Απόφαση Προνοιακών Επιδομάτων"
-            }
-          ]
-        },
-        {
-          "id": 303,
-          "option_text": "Όχι, δεν ικανοποιώ τα κριτήρια αναπηρίας",
-          "next_step": null,
-          "terminate": true,
-          "eligible": false,
-          "termination_reason": "Δεν πληρούνται τα κριτήρια αναπηρίας"
+          "option_text": "Υπήκοος τρίτης χώρας",
+          "next_step": 4,
+          "terminate": false,
+          "eligible": null
         }
       ]
     },
     {
       "id": 4,
-      "question_text": "Χρειάζεστε μετακίνηση με συνοδό;",
+      "question_text": "Ως υπήκοος τρίτης χώρας, ποια από τις παρακάτω περιπτώσεις σας αφορά;",
       "options": [
         {
           "id": 401,
-          "option_text": "Ναι - Απαιτείται συνοδός (π.χ. ολικά τυφλός)",
-          "next_step": null,
-          "terminate": true,
-          "eligible": true,
-          "termination_reason": "Δικαιούχος δωρεάν μετακίνησης με συνοδό",
-          "evidences": []
+          "option_text": "Έχω καταστεί ανίκανος για εργασία μετά από εργατικό ατύχημα σε ελληνικό έδαφος",
+          "next_step": 5,
+          "terminate": false,
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 4011,
+              "required_evidence": "Ιατρική βεβαίωση νοσηλείας από Δημόσιο Νοσοκομείο"
+            },
+            {
+              "id": 4012,
+              "required_evidence": "Αποδεικτικό νόμιμης διαμονής ή σχετικό δελτίο ασύλου"
+            }
+          ]
         },
         {
           "id": 402,
-          "option_text": "Ναι - Εξαρτώμενο μέλος με αναπηρία ≥67%",
-          "next_step": null,
-          "terminate": true,
-          "eligible": true,
-          "termination_reason": "Δικαιούχος δωρεάν μετακίνησης με συνοδό",
+          "option_text": "Διαμένω νόμιμα και μόνιμα στη χώρα (με αναπηρία)",
+          "next_step": 5,
+          "terminate": false,
+          "eligible": null,
           "evidences": [
             {
               "id": 4021,
-              "required_evidence": "Γνωμάτευση εξαρτώμενου μέλους"
+              "required_evidence": "Αποδεικτικό νόμιμης διαμονής ή σχετικό δελτίο ασύλου"
             }
           ]
         },
         {
           "id": 403,
-          "option_text": "Όχι - ανεξάρτητη μετακίνηση",
-          "next_step": 5,
-          "terminate": false,
-          "eligible": null
+          "option_text": "Καμία από τις παραπάνω",
+          "next_step": null,
+          "terminate": true,
+          "eligible": false,
+          "termination_reason": "Δεν πληρούτε τα κριτήρια διαμονής για υπηκόους τρίτων χωρών."
         }
       ]
     },
     {
       "id": 5,
-      "question_text": "Επιθυμείτε προσωποποιημένη ηλεκτρονική κάρτα ΟΑΣΑ;",
+      "question_text": "Ποια είναι η κατάσταση αναπηρίας ή επιδόματος που σας αφορά (ή αφορά το άτομο που συνοδεύετε);",
       "options": [
         {
           "id": 501,
-          "option_text": "Ναι - για πρώτη έκδοση ή αντικατάσταση",
-          "next_step": 6,
+          "option_text": "Ολικά τυφλός (ν. 958/1979) ή συνοδός ολικά τυφλού",
+          "next_step": 7,
           "terminate": false,
-          "eligible": null
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 5011,
+              "required_evidence": "Απόφαση Διοικητικού Διευθυντή Ασφαλιστικού Φορέα ή ΕΦΚΑ (ποσοστό 67% και άνω)"
+            }
+          ]
         },
         {
           "id": 502,
-          "option_text": "Όχι - διαθέτω ήδη έγκυρο δελτίο μετακίνησης",
+          "option_text": "Λαμβάνω επίδομα από τον ΟΠΕΚΑ (τυφλότητα ή σοβαρή νοητική υστέρηση) ή είμαι συνοδός τέτοιου δικαιούχου",
+          "next_step": 7,
+          "terminate": false,
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 5021,
+              "required_evidence": "Βεβαίωση λήψης οικονομικής ενίσχυσης ΑΜΕΑ (επίδομα) από τον ΟΠΕΚΑ"
+            }
+          ]
+        },
+        {
+          "id": 503,
+          "option_text": "Έχω ποσοστό αναπηρίας 67% και άνω",
+          "next_step": 6,
+          "terminate": false,
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 5031,
+              "required_evidence": "Απόφαση Διοικητικού Διευθυντή Ασφαλιστικού Φορέα ή ΕΦΚΑ (ποσοστό 67% και άνω)"
+            }
+          ]
+        },
+        {
+          "id": 504,
+          "option_text": "Δεν συντρέχει κάποια από τις παραπάνω περιπτώσεις",
           "next_step": null,
           "terminate": true,
-          "eligible": true
+          "eligible": false,
+          "termination_reason": "Δεν πληρούτε τα κριτήρια αναπηρίας ή επιδόματος για τη χορήγηση του δελτίου."
         }
       ]
     },
     {
       "id": 6,
-      "question_text": "Έχετε τα απαιτούμενα εισοδηματικά κριτήρια;",
+      "question_text": "Το ετήσιο συνολικό δηλωθέν εισόδημά σας (οικογενειακό ή ατομικό) πώς συγκρίνεται με τα όρια;",
       "options": [
         {
           "id": 601,
-          "option_text": "Ατομικό <23.000€ ή Οικογενειακό <29.000€ (με προσαύξηση για εξαρτώμενα μέλη με αναπηρία ≥67%)",
-          "next_step": null,
-          "terminate": true,
-          "eligible": true,
-          "evidences": [
-            {
-              "id": 6011,
-              "required_evidence": "Εκκαθαριστικό Σημείωμα 2022"
-            }
-          ]
+          "option_text": "Δεν υπερβαίνει τα όρια (23.000€ ατομικό / 29.000€ οικογενειακό)",
+          "next_step": 7,
+          "terminate": false,
+          "eligible": null
         },
         {
           "id": 602,
-          "option_text": "Υπέρβαση ορίων (με απόδειξη απαλλαγής ΟΠΕΚΑ)",
+          "option_text": "Υπερβαίνει τα όρια (δικαιούμαι μειωμένο εισιτήριο 50%)",
+          "next_step": 7,
+          "terminate": false,
+          "eligible": null
+        },
+        {
+          "id": 603,
+          "option_text": "Υπερβαίνει τα όρια, αλλά λαμβάνω προνοιακό επίδομα από τον ΟΠΕΚΑ που δεν συνυπολογίζεται",
+          "next_step": 7,
+          "terminate": false,
+          "eligible": null,
+          "evidences": [
+            {
+              "id": 6031,
+              "required_evidence": "Βεβαίωση ποσού προνοιακού επιδόματος από τον ΟΠΕΚΑ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question_text": "Για ποια μέσα μεταφοράς επιθυμείτε να ισχύει το δελτίο;",
+      "options": [
+        {
+          "id": 701,
+          "option_text": "Για αστικά μέσα συγκοινωνίας και υπεραστικά λεωφορεία ΚΤΕΛ",
           "next_step": null,
           "terminate": true,
           "eligible": true,
-          "termination_reason": "Απαλλαγή από εισοδηματικά κριτήρια λόγω επιδομάτων",
-          "evidences": [
-            {
-              "id": 6021,
-              "required_evidence": "Βεβαίωση ποσού προνοιακού επιδόματος"
-            }
-          ]
+          "termination_reason": "Είστε δικαιούχος δελτίου μετακίνησης."
+        },
+        {
+          "id": 702,
+          "option_text": "Μόνο για υπεραστικά λεωφορεία ΚΤΕΛ",
+          "next_step": null,
+          "terminate": true,
+          "eligible": true,
+          "termination_reason": "Είστε δικαιούχος δελτίου μετακίνησης (μόνο για ΚΤΕΛ)."
         }
       ]
     }
